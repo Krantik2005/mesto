@@ -1,0 +1,5 @@
+.cards__element {
+  max-width: 282px;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+}

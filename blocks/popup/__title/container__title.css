@@ -1,0 +1,26 @@
+.container__title {
+  max-width: 330px;
+  /*height: 23px;*/
+  margin: 34px 0 54px 36px;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 520px) {
+  .container__title {
+    max-width: 290px;
+    font-size: 22px;
+    line-height: 24px;
+    margin: 20px 0 35px 18px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container__title {
+    max-width: 230px;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 18px 0 30px 6px;
+  }
+}

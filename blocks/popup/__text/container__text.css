@@ -1,0 +1,35 @@
+.container__text {
+  max-width: 358px;
+  width: 100%;
+  padding: 0 0 8px 0;
+  margin: 0 0 30px 36px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: normal;
+}
+
+.container__text:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.container__text:focus {
+  outline-color: rgba(10, 65, 230, 0.5);
+}
+
+@media screen and (max-width: 520px) {
+  .container__text {
+    max-width: 270px;
+    margin-left: 18px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container__text {
+    max-width: 225px;
+    margin-left: 6px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

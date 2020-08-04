@@ -7,8 +7,75 @@
   <meta name="keywords" content="adaptive">
   <meta name="author" content="Буквич Сергей">
   <title>Место в России</title>
+  <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
-  
+  <header class="header">
+    <div class="header__logo"></div>
+  </header>
+  <main class="content">
+    <section class="profile">
+      <img src="./images/profile/custo.jpg" alt="Жак-Ив Кусто" class="profile__avatar">
+      <div class="profile__profile-info">
+        <div class="profile-info__inner">
+          <h2 class="inner__title">Жак-Ив Кусто</h2>
+          <button type="button"class="inner__edit-button"></button>
+        </div>
+        <p class="profile-info__subtitle">Исследователь океана</p>
+      </div>
+      <button type="button" class="profile__add-button"></button>
+    </section>
+    <section class="cards">
+      <figure class="cards__element"><img src="./images/cards/Beshtau.jpg" alt="Гора Бештау" class="element__image">
+        <figcaption class="element__item">
+          <p class="element__text">Гора Бештау</p>
+          <div class="element__icon"></div>
+        </figcaption>
+      </figure>
+      <figure class="cards__element"><img src="./images/cards/Zheleznovodsk.jpg" alt="Парк Железноводска" class="element__image">
+        <figcaption class="element__item">
+          <p class="element__text">Парк Железноводска</p>
+          <div class="element__icon"></div>
+        </figcaption>
+      </figure>
+      <figure class="cards__element"><img src="./images/cards/winter.jpg" alt="Зима в горах" class="element__image">
+        <figcaption class="element__item">
+          <p class="element__text">Зима в горах</p>
+          <div class="element__icon"></div>
+        </figcaption>
+      </figure>
+      <figure class="cards__element"><img src="./images/cards/Snake.jpg" alt="Гора Змейка" class="element__image">
+        <figcaption class="element__item">
+          <p class="element__text">Гора Змейка</p>
+          <div class="element__icon"></div>
+        </figcaption>
+      </figure>
+      <figure class="cards__element"><img src="./images/cards/Monastery.jpg" alt="Монастырь у подножья горы" class="element__image">
+        <figcaption class="element__item">
+          <p class="element__text">Монастырь у подножья горы</p>
+          <div class="element__icon"></div>
+        </figcaption>
+      </figure>
+      <figure class="cards__element"><img src="./images/cards/Elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+        <figcaption class="element__item">
+          <p class="element__text">Гора Эльбрус</p>
+          <div class="element__icon"></div>
+        </figcaption>
+      </figure>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">&copy;2020 Mesto Russia</p>
+  </footer>
+  <form class="popup">
+    <button class="popup__close"></button>
+    <div class="popup__container">
+      <h2 class="container__title">Редактировать профиль</h2>
+      <input type="text" class="container__text text_name" name="name" value="Жак-Ив Кусто">
+      <input type="text" class="container__text text_self" name="self" value="Исследователь океана">
+      <button type="submit" class="container__button">Сохранить</button>
+    </div>
+  </form>
+  <script src="./scripts/main.js"></script>
 </body>
 </html>
