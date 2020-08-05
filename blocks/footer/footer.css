@@ -10,9 +10,3 @@
     margin-left: 19px;
   }
 }
-
-@media screen and (max-width: 620px) {
-  .footer {
-    text-align: center;
-  }
-}

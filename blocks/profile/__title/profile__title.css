@@ -1,4 +1,4 @@
-.inner__title {
+.profile__title {
   max-width: 295px;
   margin: 0 0 16px;
   color: #ffffff;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 700px) {
-  .inner__title {
+  .profile__title {
     max-width: 201px;
     font-size: 27px;
     padding: 14px 0 14px;

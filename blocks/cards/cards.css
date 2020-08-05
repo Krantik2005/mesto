@@ -1,27 +1,10 @@
-@import url(./__element/cards__element.css);
-@import url(./__image/element__image.css);
-@import url(./__item/element__item.css);
-@import url(./__text/element__text.css);
-@import url(./__icon/element__icon.css);
+@import url("./__image/cards__image.css");
+@import url("./__item/cards__item.css");
+@import url("./__text/cards__text.css");
+@import url("./__icon/cards__icon.css");
 
 .cards {
-  margin-top: 51px;
-  display: grid;
-  grid-template-columns: repeat(3, 282px);
-  grid-template-rows: auto;
-  gap: 18px 21px;
+  max-width: 282px;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
 }
-
-@media screen and (max-width: 920px) {
-  .cards {
-    grid-template-columns: repeat(2, 282px);
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 620px) {
-  .cards {
-    grid-template-columns: 282px;
-  }
-}
-

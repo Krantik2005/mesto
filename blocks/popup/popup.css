@@ -1,12 +1,13 @@
-@import url(./__close/popup__close.css);
-@import url(./__container/popup__container.css);
-@import url(./__title/container__title.css);
-@import url(./__text/container__text.css);
-@import url(./__button/container__button.css);
+@import url("./__close/popup__close.css");
+@import url("./__container/popup__container.css");
+@import url("./__title/popup__title.css");
+@import url("./__button/popup__button.css");
 
 
 .popup {
   display: none;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
