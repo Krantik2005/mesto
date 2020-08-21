@@ -1,0 +1,4 @@
+.cards__icon_active {
+  opacity: 1;
+  background: no-repeat url(../../../../images/cards/heart-active.svg) center;
+}

@@ -1,0 +1,6 @@
+.popup_cardImageOpened {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear, visibility 0.5s;
+  background-color: rgba(0, 0, 0, .9);
+}

@@ -1,0 +1,5 @@
+.popup_myFormOpened {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s linear, visibility 0.5s;
+}

@@ -1,0 +1,26 @@
+.close_popup_image-close {
+  position: absolute;
+  top: 40px;
+  right: -50px;
+}
+
+@media screen and (max-width: 768px) {
+  .close_popup_image-close {
+    right: -50px;
+    top: 40px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .close_popup_image-close {
+    right: -42px;
+    top: 48px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .close_popup_image-close {
+    right: -24px;
+    top: 112px;
+  }
+}

@@ -1,0 +1,14 @@
+.popup__figure {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 -50%;
+  transform: translate(-50%, 0);
+  padding-top: 90px;
+}
+
+@media screen and (max-width: 380px) {
+  .popup__figure {
+    padding-top: 136px;
+  }
+}
