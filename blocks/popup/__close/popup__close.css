@@ -1,5 +1,5 @@
-.close {
-  background: no-repeat url(../../images/popup/Close-Icon.svg);
+.popup__close {
+  background: no-repeat url(../../../images/popup/Close-Icon.svg);
   background-size: cover;
   width: 58px;
   height: 58px;
@@ -10,19 +10,19 @@
   border: 0;
 }
 
-.close:focus {
+.popup__close:focus {
   outline: none;
 }
 
-.close:hover {
-  background: no-repeat url(../../images/popup/Close-Icon-hover.svg);
+.popup__close:hover {
+  background: no-repeat url(../../../images/popup/Close-Icon-hover.svg);
   background-size: cover;
   cursor: pointer;
   transition: 0.4s ease-in;
 }
 
 @media screen and (max-width: 520px) {
-  .close {
+  .popup__close {
     width: 50px;
     height: 50px;
     right: -40px;
@@ -31,7 +31,7 @@
 }
 
 @media screen and (max-width: 380px) {
-  .close {
+  .popup__close {
     width: 30px;
     height: 30px;
     right: -23px;

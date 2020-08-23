@@ -1,4 +1,4 @@
-.cards__icon {
+.cards__like {
   background: no-repeat url(../../../images/cards/heart.svg);
   background-size: cover;
   width: 21px;
@@ -8,18 +8,18 @@
   border: none;
 }
 
-.cards__icon:hover {
+.cards__like:hover {
   cursor: pointer;
   opacity: 0.6;
   transition: 0.4s ease-in;
 }
 
-.cards__icon:focus {
+.cards__like:focus {
   outline: none;
 }
 
 @media screen and (max-width: 380px) {
-  .cards__icon {
+  .cards__like {
     margin: 0 28px 1px 0;
   }
 }

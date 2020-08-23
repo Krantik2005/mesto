@@ -4,6 +4,10 @@
 @import url("./__img/popup__img.css");
 @import url("./__item/popup__item.css");
 @import url("./__text/popup__text.css");
+@import url("./__input/popup__input.css");
+@import url("./__close/popup__close.css");
+@import url("./__close/_image-close/close_image-close.css");
+@import url("./__button/popup__button.css");
 
 .popup {
   visibility: hidden;

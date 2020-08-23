@@ -31,27 +31,27 @@
   <footer class="footer">
     <p class="footer__copyright">&copy;2020 Mesto Russia</p>
   </footer>
-  <form class="popup popup_my-form" name="myForm">
+  <form class="popup popup_type_my-form" name="myForm">
     <div class="popup__container">
-      <button type="button" class="close close_popup_myForm-close"></button>
+      <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <input type="text" class="text text_name" name="name">
-      <input type="text" class="text text_self" name="self">
-      <button type="submit" class="button button_popup_myForm-button">Сохранить</button>
+      <input type="text" required class="popup__input popup__input_type_name" name="name" placeholder="Введите имя">
+      <input type="text" required class="popup__input popup__input_type_self" name="self" placeholder="Введите профессию">
+      <button type="submit" class="popup__button">Сохранить</button>
     </div>
   </form>
-  <form class="popup popup_card-form" name="cardForm">
+  <form class="popup popup_type_card-form" name="cardForm">
     <div class="popup__container">
-      <button type="button" class="close close_popup_cardForm-close"></button>
+      <button type="button" class="popup__close"></button>
       <h2 class="popup__title">Новое место</h2>
-      <input type="text" placeholder="Название" class="text text_card-name" name="cardName">
-      <input type="text" placeholder="Ссылка на картинку" class="text text_card-img" name="image">
-      <button type="submit" class="button button_popup_cardForm-button">Создать</button>
+      <input type="text" required placeholder="Название" class="popup__input popup__input_type_card-name" name="cardName">
+      <input type="text" required placeholder="Ссылка на картинку" class="popup__input popup__input_type_card-img" name="image">
+      <button type="submit" class="popup__button">Создать</button>
     </div>
   </form>
-  <form class="popup popup_card-image" name="cardImage">
+  <form class="popup popup_type_card-image" name="cardImage">
     <figure class="popup__figure">
-      <button type="button" class="close close_popup_image-close"></button>
+      <button type="button" class="popup__close close_image-close"></button>
       <img src="" class="popup__img" alt="">
       <figcaption class="popup__item"><h3 class="popup__text"></h3></figcaption>
     </figure>
@@ -61,7 +61,7 @@
       <button class="cards__trash"></button>
       <figcaption class="cards__item">
         <h3 class="cards__text"></h3>
-        <button type="button" class="cards__icon"></button>
+        <button type="button" class="cards__like"></button>
       </figcaption>
     </figure>
   </template>

@@ -1,4 +1,4 @@
-.button {
+.popup__button {
   max-width: 358px;
   width: 100%;
   height: 50px;
@@ -13,14 +13,14 @@
   border: 0;
 }
 
-.button:hover {
+.popup__button:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.8);
   transition: 0.4s ease-in;
 }
 
 @media screen and (max-width: 520px) {
-  .button {
+  .popup__button {
     max-width: 270px;
     margin-left: 18px;
     margin-top: 32px;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width: 380px) {
-  .button {
+  .popup__button {
     max-width: 200px;
     margin: 0 0 30px 20px;
     height: 30px;

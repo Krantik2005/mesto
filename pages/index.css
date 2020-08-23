@@ -8,10 +8,4 @@
 @import url("../blocks/cards/cards.css");
 @import url("../blocks/footer/footer.css");
 @import url("../blocks/popup/popup.css");
-@import url("../blocks/text/text.css");
-@import url("../blocks/popup/_my-form/popup_my-form.css");
-@import url("../blocks/popup/_card-form/popup_card-form.css");
-@import url("../blocks/popup/_card-image/popup_card-image.css");
-@import url("../blocks/close/close.css");
-@import url("../blocks/close/_popup_image-close/close_popup_image-close.css");
-@import url("../blocks/button/button.css");
+@import url("../blocks/popup/_is-opened/popup_is-opened.css");

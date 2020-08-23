@@ -1,4 +1,4 @@
-.text {
+.popup__input {
   max-width: 358px;
   width: 100%;
   padding: 0 0 8px 0;
@@ -10,23 +10,23 @@
   font-weight: normal;
 }
 
-.text:nth-child(3) {
+.popup__input:nth-child(3) {
   margin-bottom: 20px;
 }
 
-.text:focus {
+.popup__input:focus {
   outline-color: rgba(10, 65, 230, 0.5);
 }
 
 @media screen and (max-width: 520px) {
-  .text {
+  .popup__input {
     max-width: 270px;
     margin-left: 18px;
   }
 }
 
 @media screen and (max-width: 380px) {
-  .text {
+  .popup__input {
     max-width: 200px;
     margin-left: 20px;
     font-size: 12px;
