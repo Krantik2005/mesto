@@ -40,12 +40,16 @@ const cardContainer = document.querySelector('.container'),
       placeInput = document.querySelector('.popup__input_type_card-name'),
       imageInput = document.querySelector('.popup__input_type_card-img'),
       title = document.querySelector('.profile__title'),
-      subtitle = document.querySelector('.profile__subtitle');
+      subtitle = document.querySelector('.profile__subtitle'),
+      popupTypeCard = document.querySelector('.popup_type_card-image'),
+      popupImage = document.querySelector('.popup__img'),
+      popupText = document.querySelector('.popup__text'),
+      template = document.querySelector('#cardTemplate');
 
 //функция добавления карточек
 const addCardToContainer = (card) => {
   //клонируем
-  const cardElement = document.querySelector('#cardTemplate').content.cloneNode(true);
+  const cardElement = template.content.cloneNode(true);
 
   //добавляем картинки, текст и alt карточкам
   const cardTemplateImage = cardElement.querySelector('.cards__image');
@@ -64,36 +68,35 @@ initialCards.forEach(addCardToContainer);
 
 // добавление картинки, альтов и текста
 function handlePreviewPicture (card) {
-    const popupTypeCard = document.querySelector('.popup_type_card-image');
-    const popupImage = document.querySelector('.popup__img');
     popupImage.src = card.link;
     popupImage.alt = card.name;
-    document.querySelector('.popup__text').textContent = card.name;
-    //добавление слушателя, при нажатии на кнопку esc закрывает попап
-    document.addEventListener('keydown', closePopupKeyPress);
+    popupText.textContent = card.name;
     toggleModalWindow(popupTypeCard);
 }
 
 //универсальное открытие попапов
 const toggleModalWindow = (modalWindow) => {
   modalWindow.classList.toggle('popup_is-opened');
+
+  //проверка условием добавления и удаления слушателя при нажатии на esc
+  if (modalWindow.classList.contains('popup_is-opened')) {
+    document.addEventListener('keydown', closePopupKeyPress);
+  } else {
+    document.removeEventListener('keydown', closePopupKeyPress);
+  }
   //проверка заполненности полей
-  checkParametr();
+  toggleFormButtonState();
 };
 
 //открытие первого попапа
 editButton.addEventListener('click', (evt) => {
   popupMyFormAdd();
   toggleModalWindow(firstPopup);
-  //добавление слушателя, при нажатии на кнопку esc закрывает попап
-  document.addEventListener('keydown', closePopupKeyPress);
 });
 
 //открытие второго попапа
 addButton.addEventListener('click', (evt) => {
   toggleModalWindow(secondPopup);
-  //добавление слушателя, при нажатии на кнопку esc закрывает попап
-  document.addEventListener('keydown', closePopupKeyPress);
 });
 
 //закрытие попапов на крестик
@@ -117,9 +120,8 @@ popup.forEach(mousePress => {
 function closePopupKeyPress (evt) {
   const popupOpen = document.querySelector('.popup_is-opened');
   if (evt.key === 'Escape') {
-    popupOpen.classList.remove('popup_is-opened');
+    toggleModalWindow(popupOpen);
   }
-  document.removeEventListener('keydown', closePopupKeyPress);
 }
 
 cardContainer.addEventListener('click', (evt) => {
@@ -141,7 +143,7 @@ function popupMyFormAdd() {
 }
 
 //проверяет заполненны поля или нет
-function checkParametr () {
+function toggleFormButtonState () {
   const btn = document.querySelector('.popup__button');
 
   if (nameInput.length !== 0 && selfInput.length !== 0) {

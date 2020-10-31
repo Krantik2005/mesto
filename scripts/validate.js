@@ -42,9 +42,11 @@ const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
     //кнопка не активна
     buttonElement.classList.add('popup__button_disabled');
+    buttonElement.disabled = true;
   } else {
     //кнопка активна
     buttonElement.classList.remove('popup__button_disabled');
+    buttonElement.disabled = false;
   }
 };
 
