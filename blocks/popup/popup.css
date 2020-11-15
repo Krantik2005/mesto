@@ -11,8 +11,8 @@
 @import url("./__field/popup__field.css");
 @import url("./__input/_type_error/popup__input_type_error.css");
 @import url("./__input/_error/popup__input_error.css");
-@import url("./__input/_error/_visible/popup__input_error_visible.css");
 @import url("./__button/_disabled/popup__button_disabled.css");
+@import url("./__input/_error/_visible/popup__input_error_visible.css");
 
 .popup {
   visibility: hidden;
