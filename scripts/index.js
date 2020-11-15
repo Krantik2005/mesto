@@ -1,30 +1,6 @@
-//Массив cards
-const initialCards = [
-  {
-      name: 'Гора Бештау',
-      link: './images/cards/Beshtau.jpg'
-  },
-  {
-      name: 'Парк Железноводска',
-      link: './images/cards/Zheleznovodsk.jpg'
-  },
-  {
-      name: 'Зима в горах',
-      link: './images/cards/winter.jpg'
-  },
-  {
-      name: 'Гора Змейка',
-      link: './images/cards/Snake.jpg'
-  },
-  {
-      name: 'Монастырь у подножья горы',
-      link: './images/cards/Monastery.jpg'
-  },
-  {
-      name: 'Гора Эльбрус',
-      link: './images/cards/Elbrus.jpg'
-  }
-];
+import { initialCards, validationObj } from './Array.js';
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
 
 const cardContainer = document.querySelector('.container'),
       closeButton = document.querySelectorAll('.popup__close'),
@@ -43,36 +19,31 @@ const cardContainer = document.querySelector('.container'),
       subtitle = document.querySelector('.profile__subtitle'),
       popupTypeCard = document.querySelector('.popup_type_card-image'),
       popupImage = document.querySelector('.popup__img'),
-      popupText = document.querySelector('.popup__text'),
-      template = document.querySelector('#cardTemplate');
+      popupText = document.querySelector('.popup__text');
+
+
+const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
+editProfileForm.enableValidation();
+const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
+addCardForm.enableValidation();
 
 //функция добавления карточек
-const addCardToContainer = (card) => {
-  //клонируем
-  const cardElement = template.content.cloneNode(true);
+const addCardToContainer = (item) => {
 
-  //добавляем картинки, текст и alt карточкам
-  const cardTemplateImage = cardElement.querySelector('.cards__image');
-  cardTemplateImage.src = card.link;
-  cardTemplateImage.alt = card.name;
-  cardElement.querySelector('.cards__text').textContent = card.name;
+  const card = new Card(item, '#cardTemplate', () => handlePreviewPicture(item));
+  card.generateCard(cardContainer);
 
-  // открытие карточки при нажатии
-  cardTemplateImage.addEventListener('click', () => handlePreviewPicture(card));
-
-  //добавляем карточки на страницу
-  cardContainer.prepend(cardElement);
 };
 
 initialCards.forEach(addCardToContainer);
 
 // добавление картинки, альтов и текста
-function handlePreviewPicture (card) {
-    popupImage.src = card.link;
-    popupImage.alt = card.name;
-    popupText.textContent = card.name;
-    toggleModalWindow(popupTypeCard);
-}
+const handlePreviewPicture = (data) => {
+  popupImage.src = data.link;
+  popupImage.alt = data.name;
+  popupText.textContent = data.name;
+  toggleModalWindow(popupTypeCard);
+};
 
 //универсальное открытие попапов
 const toggleModalWindow = (modalWindow) => {
@@ -117,33 +88,21 @@ popup.forEach(mousePress => {
 });
 
 // закрытие попапа на клавишу Escape
-function closePopupKeyPress (evt) {
+const closePopupKeyPress = (evt) => {
   const popupOpen = document.querySelector('.popup_is-opened');
   if (evt.key === 'Escape') {
     toggleModalWindow(popupOpen);
   }
-}
-
-cardContainer.addEventListener('click', (evt) => {
-  //ставим убираем лайк
-  if (evt.target.classList.contains('cards__like')) {
-    evt.target.classList.toggle('cards__like_active');
-  }
-
-  //удаление карточки 
-  if (evt.target.classList.contains('cards__trash')) {
-    evt.target.closest('.cards').remove();
-  }
-});
+};
 
 //Копирует данные (из h1 и p, в input)
-function popupMyFormAdd() {
+const popupMyFormAdd = () => {
   nameInput.value = title.textContent;
   selfInput.value = subtitle.textContent;
-}
+};
 
 //проверяет заполненны поля или нет
-function toggleFormButtonState () {
+const toggleFormButtonState = () => {
   const btn = document.querySelector('.popup__button');
 
   if (nameInput.length !== 0 && selfInput.length !== 0) {
@@ -151,10 +110,10 @@ function toggleFormButtonState () {
   } else {
     btn.classList.add('popup__button_disabled');
   }
-}
+};
 
 //Обработчик отправки формы submit
-function formSubmitHandler (evt) {
+const formSubmitHandler = (evt) => {
   evt.preventDefault();
 
   //Добавляем текст на страницу
@@ -163,10 +122,10 @@ function formSubmitHandler (evt) {
 
   //Закрываем попап
   toggleModalWindow(evt.target);
-}
+};
 
 //Добавляем новую карточку
-function formSubmitCard (evt) {
+const formSubmitCard = (evt) => {
   evt.preventDefault();
 
   const addCard = {
@@ -180,7 +139,7 @@ function formSubmitCard (evt) {
 
   //сбрасывается значение полей после отправки
   popupCardForm.reset();
-}
+};
 
 popupMyForm.addEventListener('submit', formSubmitHandler);
 popupCardForm.addEventListener('submit', formSubmitCard);
