@@ -22,17 +22,13 @@ const cardContainer = document.querySelector('.container'),
       popupText = document.querySelector('.popup__text');
 
 
-const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
-editProfileForm.enableValidation();
-const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
-addCardForm.enableValidation();
-
 //функция добавления карточек
 const addCardToContainer = (item) => {
 
   const card = new Card(item, '#cardTemplate', () => handlePreviewPicture(item));
-  card.generateCard(cardContainer);
+  const cardElement = card.generateCard();
 
+  cardContainer.append(cardElement);
 };
 
 initialCards.forEach(addCardToContainer);
@@ -55,19 +51,23 @@ const toggleModalWindow = (modalWindow) => {
   } else {
     document.removeEventListener('keydown', closePopupKeyPress);
   }
-  //проверка заполненности полей
-  toggleFormButtonState();
 };
 
 //открытие первого попапа
 editButton.addEventListener('click', (evt) => {
   popupMyFormAdd();
   toggleModalWindow(firstPopup);
+
+  const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
+  editProfileForm.enableValidation();
 });
 
 //открытие второго попапа
 addButton.addEventListener('click', (evt) => {
   toggleModalWindow(secondPopup);
+
+  const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
+  addCardForm.enableValidation();
 });
 
 //закрытие попапов на крестик
@@ -101,20 +101,8 @@ const popupMyFormAdd = () => {
   selfInput.value = subtitle.textContent;
 };
 
-//проверяет заполненны поля или нет
-const toggleFormButtonState = () => {
-  const btn = document.querySelector('.popup__button');
-
-  if (nameInput.length !== 0 && selfInput.length !== 0) {
-    btn.classList.remove('popup__button_disabled');
-  } else {
-    btn.classList.add('popup__button_disabled');
-  }
-};
-
 //Обработчик отправки формы submit
 const formSubmitHandler = (evt) => {
-  evt.preventDefault();
 
   //Добавляем текст на страницу
   title.textContent = nameInput.value;
@@ -126,7 +114,6 @@ const formSubmitHandler = (evt) => {
 
 //Добавляем новую карточку
 const formSubmitCard = (evt) => {
-  evt.preventDefault();
 
   const addCard = {
     name: placeInput.value,

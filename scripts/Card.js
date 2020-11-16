@@ -22,7 +22,7 @@ export class Card {
     this._content.querySelector('.cards__like').classList.toggle('cards__like_active');
   }
 
-  generateCard(cardContainer) {
+  generateCard() {
     this._content = this._cardSelector.cloneNode(true);
 
     this._content.querySelector('.cards__image').src = this._link;
@@ -31,8 +31,6 @@ export class Card {
 
     this._setEventListeners();
 
-    cardContainer.prepend(this._content);
+    return this._content;
   }
-
-
 }
