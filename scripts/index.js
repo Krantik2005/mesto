@@ -21,7 +21,6 @@ const cardContainer = document.querySelector('.container'),
       popupImage = document.querySelector('.popup__img'),
       popupText = document.querySelector('.popup__text');
 
-
 //функция добавления карточек
 const addCardToContainer = (item) => {
 
@@ -57,17 +56,13 @@ const toggleModalWindow = (modalWindow) => {
 editButton.addEventListener('click', (evt) => {
   popupMyFormAdd();
   toggleModalWindow(firstPopup);
-
-  const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
   editProfileForm.enableValidation();
+  addCardForm.toggleButtonState();
 });
 
 //открытие второго попапа
 addButton.addEventListener('click', (evt) => {
   toggleModalWindow(secondPopup);
-
-  const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
-  addCardForm.enableValidation();
 });
 
 //закрытие попапов на крестик
@@ -119,8 +114,11 @@ const formSubmitCard = (evt) => {
     name: placeInput.value,
     link: imageInput.value
   };
-  
-  addCardToContainer(addCard);
+
+  const card = new Card(addCard, '#cardTemplate', () => handlePreviewPicture(addCard));
+  const cardElement = card.generateCard();
+
+  cardContainer.prepend(cardElement);
 
   toggleModalWindow(evt.target);
 
@@ -132,3 +130,7 @@ popupMyForm.addEventListener('submit', formSubmitHandler);
 popupCardForm.addEventListener('submit', formSubmitCard);
 
 
+const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
+
+const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
+addCardForm.enableValidation();
