@@ -57,7 +57,6 @@ editButton.addEventListener('click', (evt) => {
   popupMyFormAdd();
   toggleModalWindow(firstPopup);
   editProfileForm.enableValidation();
-  addCardForm.toggleButtonState();
 });
 
 //открытие второго попапа
@@ -133,4 +132,5 @@ popupCardForm.addEventListener('submit', formSubmitCard);
 const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
 
 const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
+addCardForm.toggleButtonState();
 addCardForm.enableValidation();
