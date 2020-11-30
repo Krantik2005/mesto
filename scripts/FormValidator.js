@@ -78,6 +78,5 @@ export class FormValidator {
         this.toggleButtonState(this._inputList, this._submitButtonElement);
       });
     });
-    this.toggleButtonState(this._inputList, this._submitButtonElement);
   }
 }

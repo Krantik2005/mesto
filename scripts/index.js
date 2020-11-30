@@ -6,8 +6,6 @@ const cardContainer = document.querySelector('.container'),
       closeButton = document.querySelectorAll('.popup__close'),
       editButton = document.querySelector('.profile__edit-button'),
       addButton = document.querySelector('.profile__add-button'),
-      firstPopup = document.querySelector('.popup_type_my-form'),
-      secondPopup = document.querySelector('.popup_type_card-form'),
       popup = document.querySelectorAll('.popup'),
       popupMyForm = document.querySelector('.popup_type_my-form'),
       popupCardForm = document.querySelector('.popup_type_card-form'),
@@ -55,13 +53,13 @@ const toggleModalWindow = (modalWindow) => {
 //открытие первого попапа
 editButton.addEventListener('click', (evt) => {
   popupMyFormAdd();
-  toggleModalWindow(firstPopup);
-  editProfileForm.enableValidation();
+  toggleModalWindow(popupMyForm);
 });
 
 //открытие второго попапа
 addButton.addEventListener('click', (evt) => {
-  toggleModalWindow(secondPopup);
+  toggleModalWindow(popupCardForm);
+  addCardForm.toggleButtonState();
 });
 
 //закрытие попапов на крестик
@@ -130,7 +128,7 @@ popupCardForm.addEventListener('submit', formSubmitCard);
 
 
 const editProfileForm = new FormValidator(validationObj, '.popup_type_my-form');
+editProfileForm.enableValidation();
 
 const addCardForm = new FormValidator(validationObj, '.popup_type_card-form');
-addCardForm.toggleButtonState();
 addCardForm.enableValidation();
