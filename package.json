@@ -1,0 +1,26 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "1. Вы увидите замечательные виды Кавказских Минеральных Вод.\r 2. Впишите себя и свои увлечения.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krantik2005/mesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krantik2005/mesto/issues"
+  },
+  "homepage": "https://github.com/Krantik2005/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
